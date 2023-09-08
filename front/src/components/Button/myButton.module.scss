@@ -1,0 +1,89 @@
+@use "sass:map";
+@import "../../assets/styles/variables.scss";
+
+.btn {
+  position: relative;
+  margin: 0;
+  padding: 0.5vh 2vh;
+  margin-right: 1vh;
+  @include fluidFontSize(12px, 18px, 480px, 1280px, 14px);
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: 0.2s;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 0 10px map.get($colors, blue);
+  background-color: map.get($colors, dark-grey);
+  color: map.get($colors, blue);
+}
+
+.line {
+  position: absolute;
+  display: block;
+}
+
+.lineTop {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, map.get($colors, blue));
+  margin: 0;
+}
+
+.btn:hover .lineTop {
+  left: 100%;
+  transition: 1s;
+}
+
+.lineBottom {
+  bottom: 0;
+  left: 100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(270deg, transparent, map.get($colors, blue));
+  margin: 0;
+}
+
+.btn:hover .lineBottom {
+  left: -100%;
+  transition: 1s;
+}
+
+.lineRight {
+  right: 0;
+  top: -100%;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, map.get($colors, blue));
+  margin: 0;
+}
+
+.btn:hover .lineRight {
+  top: 100%;
+  transition: 1s;
+}
+
+.lineLeft {
+  left: 0;
+  top: 100%;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(0deg, transparent, map.get($colors, blue));
+  margin: 0;
+}
+
+.btn:hover .lineLeft {
+  top: -100%;
+  transition: 1s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 10px map.get($colors, dark-grey);
+  background: map.get($colors, blue);
+  color: map.get($colors, dark-grey);
+  transition-delay: 0.5s;
+}

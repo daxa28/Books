@@ -1,0 +1,72 @@
+@use "sass:map";
+@import "../../assets/styles/variables.scss";
+
+.title {
+  margin: 2vh 0;
+  text-align: center;
+  width: 100%;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+  .input {
+    @include fluidFontSize(12px, 18px, 480px, 1280px, 14px);
+    padding: 0.6vh 0.7vh;
+    border: 0.2vh solid map.get($colors, dark-grey);
+    box-shadow: 0 0 7px map.get($colors, blue);
+    margin-right: 20px;
+    &:hover {
+      box-shadow: 0 0 5px map.get($colors, dark-grey);
+    }
+    &::placeholder {
+      @include fluidFontSize(12px, 18px, 480px, 1280px, 14px);
+      color: map.get($colors, blue);
+    }
+    &:focus {
+      border: 0.2vh solid map.get($colors, blue);
+      box-shadow: 0 0 7px #575757;
+      outline-style: none;
+    }
+  }
+}
+
+.sort {
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+}
+
+.random {
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+}
+.content {
+  margin: 6vh 0;
+  .message {
+    margin: 2vh 0;
+    text-align: center;
+    @include fluidFontSize(14px, 24px, 480px, 1280px, 14px);
+    color: map.get($colors, dark-blue);
+  }
+  .books {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 30px;
+    row-gap: 50px;
+  }
+  .loadMore {
+    margin: 4vh 0;
+    text-align: center;
+  }
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh;
+    img {
+      width: 360px;
+    }
+  }
+}

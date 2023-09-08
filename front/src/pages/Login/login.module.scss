@@ -1,0 +1,40 @@
+@use "sass:map";
+@import "../../assets/styles/variables.scss";
+
+.title {
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 5vh 0;
+}
+
+.input {
+  padding: 0.5vh 0.7vh;
+  margin: 1vh 0;
+  border: 0.2vh solid #575757;
+  @include fluidFontSize(14px, 18px, 240px, 640px, 12px);
+
+  &:hover {
+    box-shadow: 0 0 3px #9aa4d0;
+  }
+  &:focus {
+    border: 2px solid #9aa4d0;
+    outline-style: none;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin: 2vh 0;
+}

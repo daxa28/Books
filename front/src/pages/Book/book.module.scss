@@ -1,0 +1,60 @@
+@use "sass:map";
+@import "../../assets/styles/variables.scss";
+
+.content {
+  display: flex;
+  justify-content: center;
+  margin: 3vh;
+
+  .message {
+    margin: 2vh 0;
+    text-align: center;
+    @include fluidFontSize(14px, 24px, 480px, 1280px, 14px);
+    color: map.get($colors, dark-blue);
+  }
+  .book {
+    display: grid;
+    grid-template-areas: "a a" "b c";
+
+    .descriptionContent {
+      grid-area: c;
+      h2 {
+        text-align: center;
+      }
+    }
+
+    .titleContent {
+      grid-area: b;
+      .image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2vh 0;
+
+        img {
+          width: 180px;
+          box-shadow: 3px 3px 15px map.get($colors, dark-grey);
+        }
+      }
+
+      .authors {
+        text-align: center;
+        @include fluidFontSize(12px, 24px, 480px, 1280px, 14px);
+      }
+
+      h1 {
+        margin-top: 2vh;
+        padding: 0 3vh;
+        text-align: center;
+        color: map.get($colors, dark-blue);
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 1px #000;
+      }
+    }
+
+    h3 {
+      grid-area: a;
+      margin: 2vh 0;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use "sass:map";
+@import "../../assets/styles/variables.scss";
+
+.mySelect {
+  @include fluidFontSize(12px, 18px, 480px, 1280px, 14px);
+  margin-right: 20px;
+  background: map.get($colors, white);
+  color: map.get($colors, dark-grey);
+  border: 0.2vh solid map.get($colors, dark-grey);
+  box-shadow: 0 0 5px map.get($colors, blue);
+  padding: 0.5vh 0.6vh;
+  outline: none;
+
+  &:hover {
+    box-shadow: 0 0 5px map.get($colors, dark-grey);
+  }
+}
