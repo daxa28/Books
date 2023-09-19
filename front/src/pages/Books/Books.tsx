@@ -43,14 +43,14 @@ export default function Books() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (searchBook != "") {
+    if (searchBook !== "") {
       dispatch(
         getBooksAction({
           startIndex,
           maxResults,
           searchBook,
-          category: category,
-          orderBy: orderBy,
+          category,
+          orderBy,
         })
       );
     }
@@ -64,8 +64,8 @@ export default function Books() {
             startIndex,
             maxResults,
             searchBook,
-            category: category,
-            orderBy: orderBy,
+            category,
+            orderBy,
           })
         );
       }
@@ -81,7 +81,7 @@ export default function Books() {
     setIsSearch(true);
     setStartIndex(0);
     setErrorSearchBookInput("");
-    if (searchBookInput != "") {
+    if (searchBookInput !== "") {
       setSearchBook(searchBookInput);
     } else {
       setErrorSearchBookInput("Enter search text.");
@@ -95,14 +95,14 @@ export default function Books() {
 
   function changeOrderBy(value: string) {
     setOrderBy(value);
-    if (searchBook != searchBookInput) {
+    if (searchBook !== searchBookInput) {
       setSearchBook(searchBookInput);
     }
   }
 
   function changeCategory(value: string) {
     setCategory(value);
-    if (searchBook != searchBookInput) {
+    if (searchBook !== searchBookInput) {
       setSearchBook(searchBookInput);
     }
   }

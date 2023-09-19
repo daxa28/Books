@@ -23,7 +23,7 @@ export const bookSlice = createSlice({
   name: BOOK,
   initialState,
   reducers: {
-    getBookAction: (state: BookStateType) => {
+    getBookAction: (state: BookStateType, {}) => {
       state.isLoading = true;
       state.error = "";
     },

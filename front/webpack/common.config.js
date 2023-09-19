@@ -12,9 +12,9 @@ const STATIC_DIR = path.resolve(__dirname, "..", "static");
 
 const plugins = [
   new webpack.DefinePlugin({
-    // 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    'process.env.GOOGLE_API_KEY': JSON.stringify(process.env.GOOGLE_API_KEY),
+    "process.env.GOOGLE_API_KEY": JSON.stringify(process.env.GOOGLE_API_KEY),
   }),
+
   new FileManagerPlugin({
     events: {
       // Remove build dir
@@ -33,11 +33,13 @@ const plugins = [
       },
     },
   }),
+
   new HtmlWebpackPlugin({
     template: path.join(PUBLIC_DIR, "index.html"),
     filename: "index.html",
   }),
-  //
+
+
   new FaviconsWebpackPlugin({
     logo: path.resolve(PUBLIC_DIR, "favicon.svg"),
     prefix: "/favicons/",
@@ -61,6 +63,7 @@ const plugins = [
     },
     cache: false, // Disallow caching the assets across webpack builds.
   }),
+  
   new webpack.HotModuleReplacementPlugin(), // For page reloading
 ];
 

@@ -53,8 +53,7 @@ export const booksSlice = createSlice({
   initialState,
   reducers: {
     getBooksAction: (
-      state: BooksStateType
-    ) => {
+      state: BooksStateType, {}) => {
       state.isLoading = true;
       state.error = "";
     },
@@ -73,7 +72,7 @@ export const booksSlice = createSlice({
       state.error = error;
     },
     getNextBooksAction: (
-      state: BooksStateType,
+      state: BooksStateType, {}
     ) => {
       state.isLoadingNextBooks = true;
       state.errorNextBooks = "";
